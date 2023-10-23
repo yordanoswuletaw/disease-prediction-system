@@ -1,0 +1,321 @@
+﻿{% extends "basic.html" %}
+{% load static %}
+
+
+{% block head %}
+
+
+{% endblock %}
+
+
+
+
+{% block body %}
+
+
+
+<div>
+  <div class="d-flex">
+    <div style="background-color: #F7F7F7; padding: 7% 0 7% 7%;" class="w-50 jumbotron">
+      <h3 class="display-4 mb-5">Be Your Own Doctor...</h3>
+      <h4 class="mb-3">Get yourself cured!</h4>
+      <font>
+        <p style="opacity: 0.8; text-align: justify; font-size: 1rem;" class="lead mb-5">
+          It might have happened so many times that you or someone yours need doctor’s help immediately, but they are
+          not available due to some reasons.The Disease Prediction system is an end user support and online consultation
+          project. Here, we propose a web application that allow users to get instant guidance on their disease through
+          an intelligent system.
+      </font>
+
+      {% if user.is_authenticated %}
+    </div>
+    <div class="w-50 px-5">
+      <img alt="doctors image" src="{% static 'homepage/landingpage.svg' %}">
+    </div>
+
+  </div>
+</div>
+
+{% else %}
+
+<p class="lead">
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".bd-example-modal-lg">Get
+    Started !</button>
+</p>
+</div>
+<div class="w-50 px-5">
+  <img alt="doctors image" src="{% static 'homepage/landingpage.svg' %}">
+</div>
+
+</div>
+</div>
+
+<div class="container mb-3" style="width:fit-content;">
+  <center>
+    <h1>Sign-In As</h1>
+  </center>
+
+
+  <form>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col shadow p-3 mb-5 bg-body rounded">
+          <a href="{% url 'sign_in_admin' %}">
+            <img alt="admin" src="{% static 'homepage/admin.png' %}" class="img">
+          </a>
+        </div>
+
+        <div class="col shadow p-3 mb-5 mx-5 bg-body rounded">
+          <a href="{% url 'sign_in_doctor' %}">
+            <img alt="doctor" src="{% static 'homepage/doctor.png' %}" class="img">
+          </a>
+        </div>
+
+        <div class="col shadow p-3 mb-5 bg-body rounded">
+          <a href="{% url 'sign_in_patient' %}">
+            <img alt="patient" src="{% static 'homepage/patient.png' %}" class="img">
+          </a>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+
+{% endif %}
+
+<br><br>
+
+
+
+
+<!-- Large modal -->
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <center>
+        <h1>Sign-In As</h1>
+      </center>
+      <br><br>
+
+      <center>
+        <form>
+          <div class="container mt-5 mb-5">
+            <div class="row">
+              <div class="col shadow p-3 mb-5 bg-body rounded">
+                <a href="{% url 'sign_in_admin' %}">
+                  <img alt="admin" src="{% static 'homepage/admin.png' %}" class="img">
+                </a>
+              </div>
+
+              <div class="col shadow p-3 mb-5 bg-body rounded">
+                <a href="{% url 'sign_in_doctor' %}">
+                  <img alt="doctor" src="{% static 'homepage/doctor.png' %}" class="img">
+                </a>
+              </div>
+
+              <div class="col shadow p-3 mb-5 bg-body rounded">
+                <a href="{% url 'sign_in_patient' %}">
+                  <img alt="patient" src="{% static 'homepage/patient.png' %}" class="img">
+                </a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </center>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- Large modal -->
+
+<div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <center>
+        <h1>Sign-Up As</h1>
+      </center>
+      <br><br>
+
+      <center>
+        <form>
+          <div class="container mt-5 mb-5 ml-5 mr-5">
+            <div class="row">
+
+              <div class="col shadow p-3 mb-5 bg-body rounded">
+                <a href="{% url 'signup_doctor' %}">
+                  <img alt="doctor" src="{% static 'homepage/doctor.png' %}" class="img">
+                </a>
+              </div>
+
+              <div class="col shadow p-3 mb-5 bg-body rounded">
+                <a href="{% url 'signup_patient' %}">
+                  <img alt="patient" src="{% static 'homepage/patient.png' %}" class="img">
+                </a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </center>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!--
+<center><h2>Our Doctors</h2></center>
+<div class="row mt-5 mb-5">
+    <div class="col">
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 class="card-title">Dr. MANISH BANSAL </h5>
+                <img  alt="admin" src="{% static 'homepage/c31.jpg' %}" width="200" height="150" class="rounded">
+                <p class="card-text">H.No-1283, Ward No-14, New Anaz Mandi Road, P.O-Radaur, Distt. Yamuna Nagar - 135133, (Haryana).</p>
+                
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 class="card-title">Dr. BANSAL JATINDER PAUL </h5>
+                <img  alt="admin" src="{% static 'homepage/c41.jpg' %}" width="200" height="150" class="rounded">
+                <p class="card-text">Om Niwas Khai Basti, Khai Road, Lehragaga-148031, Distt. Sangrur, Punjab.</p>
+                
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 class="card-title">DR. RADHIKA SWAROOP</h5>
+                <img  alt="admin" src="{% static 'homepage/s72.jpg' %}" width="200" height="150" class="rounded">
+                <p class="card-text">Swaroop Hospital, 1, Hawa Sarak, Civil Lines, # Jaipur-302 019.</p>
+                
+            </div>
+        </div>
+    </div>
+</div>
+-->
+
+<!-- Footer -->
+<footer class="text-center text-lg-start text-dark" style="background-color: #ECEFF1">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-between  text-white" style="background-color: #ECEFF1">
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold">Contributors</h6>
+          <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+          <p>
+            <a href="#!" class="text-dark">Yared Tsegaye</a>
+          </p>
+          <p>
+            <a href="#!" class="text-dark">Elsai Deribu</a>
+          </p>
+          <p>
+            <a href="#!" class="text-dark">Tesfaye Adugna</a>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold">Phone numbers</h6>
+          <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+          <p>
+            <a href="#!" class="text-dark">+251982985676</a>
+          </p>
+          <p>
+            <a href="#!" class="text-dark">+251982985676</a>
+          </p>
+          <p>
+            <a href="#!" class="text-dark">+251982985676</a>
+          </p>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold">Contact</h6>
+          <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+          <p>
+            <a style="color: #343A40;" href="mailto:yaredtsegaye120@gmail.com"><i class="fas fa-envelope mr-3"></i>
+              yaredtsegaye120@gmail.com</a>
+          </p>
+          <p>
+            <a style="color: #343A40;" href="mailto:elsaideribu7@gmail.com"><i class="fas fa-phone mr-3"></i>
+              elsaideribu7@gmail.com</a>
+          </p>
+          <p>
+            <a style="color: #343A40;" href="mailto:tesfayeadugna888@gmail.com"><i class="fas fa-print mr-3"></i>
+              tesfayeadugna888@gmail.com</a>
+          </p>
+        </div>
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+    © 2023 Copyright:
+    <a class="text-dark" href="">Disease Prediction System</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+<!-- End of .container -->
+
+
+
+
+
+</div>
+
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+{% endblock %}

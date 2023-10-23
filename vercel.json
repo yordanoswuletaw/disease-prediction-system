@@ -1,0 +1,14 @@
+{
+    "builds": [
+      {
+        "src": "disease_prediction/wsgi.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "disease_prediction/wsgi.py"
+      }
+    ]
+}
